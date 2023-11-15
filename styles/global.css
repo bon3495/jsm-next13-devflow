@@ -57,3 +57,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .primary-text-gradient {
+    background: linear-gradient(129deg, rgb(225, 29, 72) 0%, rgb(238, 123, 148) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
