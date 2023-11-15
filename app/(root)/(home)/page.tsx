@@ -1,11 +1,26 @@
 import React from 'react';
 
-const Home = () => {
-  return <div>
+import Navbar from '@/components/shared/Navbar';
+import { RootLayoutProps } from '@/types/global';
 
-    <h1 className="text-[50px] font-bold">Next.js 13 With Javascript Mastery</h1>
-    <h3 className="font-spaceGrotesk text-[30px] font-semibold text-primary">Font Space Grotesk</h3>
-  </div>;
+const Home = ({ children }: RootLayoutProps) => {
+  return (
+    <>
+      <header className="fixed inset-x-0 top-0 z-50">
+        <Navbar />
+      </header>
+      <main className="relative mt-[72px] bg-background">
+        <div className="flex">
+          LeftSidebar
+          <section className="flex min-h-screen flex-1 flex-col px-6 pb-6 pt-36 max-md:pb-14 sm:px-14">
+            <div className="mx-auto w-full max-w-5xl">{children}</div>
+          </section>
+          RightSidebar
+        </div>
+      </main>
+      Toaster
+    </>
+  );
 };
 
 export default Home;
