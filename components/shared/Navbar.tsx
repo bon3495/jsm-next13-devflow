@@ -3,12 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { SignedIn, UserButton } from '@clerk/nextjs';
 
+import MobileNavbar from '@/components/shared/MobileNavbar';
 import { ModeToggle } from '@/components/shared/ToggleTheme';
 import { ROUTES_NAME } from '@/constants/routes';
 
 const Navbar = () => {
   return (
-    <nav className="flex w-full items-center justify-between gap-5 bg-background px-6 py-4 shadow-navbar sm:px-12">
+    <nav className="flex w-full items-center justify-between gap-5 bg-background-light/90 px-6 py-4 shadow-navbar backdrop-blur-xl sm:px-12">
       <Link href={ROUTES_NAME.HOME} className="flex items-center gap-2">
         <Image width={24} height={24} alt="Dev Flow" src="/assets/images/site-logo.svg" />
         <p className="flex items-center gap-1 font-spaceGrotesk text-2xl font-bold tracking-tighter max-sm:hidden">
@@ -32,6 +33,8 @@ const Navbar = () => {
             }}
           />
         </SignedIn>
+
+        <MobileNavbar />
       </div>
     </nav>
   );
