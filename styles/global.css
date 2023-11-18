@@ -58,7 +58,7 @@
     --secondary: 250, 84%, 54%;
     --secondary-light: 250, 84%, 60%;
     --secondary-lighter: 250, 84%, 67%;
-    --secondary-foreground: 250 100% 90%;
+    --secondary-foreground: 250 100% 95%;
 
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -129,7 +129,7 @@
     --secondary: 250, 84%, 54%;
     --secondary-light: 250, 84%, 60%;
     --secondary-lighter: 250, 84%, 67%;
-    --secondary-foreground: 250 100% 90%;
+    --secondary-foreground: 250 100% 95%;
 
     --foreground: 0 0% 95%;
     --card: 24 9.8% 10%;
@@ -161,5 +161,13 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .bg-primary-gradient {
+    background: hsla(342, 92%, 54%, 1);
+    background: linear-gradient(0deg, hsla(342, 92%, 54%, 1) 0%, hsla(342, 92%, 65%, 1) 100%);
+    background: -moz-linear-gradient(0deg, hsla(342, 92%, 54%, 1) 0%, hsla(342, 92%, 65%, 1) 100%);
+    background: -webkit-linear-gradient(0deg, hsla(342, 92%, 54%, 1) 0%, hsla(342, 92%, 65%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F61E5F", endColorstr="#F85485", GradientType=1 );
   }
 }

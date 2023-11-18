@@ -5,17 +5,20 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-base font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:translate-y-[1px] outline-none',
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-        destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+        default:
+          'bg-primary-gradient text-primary-foreground hover:shadow-button-primary focus-visible:ring-primary-dark',
+        destructive:
+          'bg-destructive text-destructive-foreground hover:bg-destructive/90 focus-visible:ring-destructive/80',
         outline:
-          'border border-input bg-background-light hover:bg-background-dark hover:text-accent-foreground dark:hover:bg-accent-lighter',
-        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
-        link: 'text-primary underline-offset-4 hover:underline',
+          'border border-input bg-background-light hover:bg-background-dark hover:text-accent-foreground dark:hover:bg-contrast-lower focus-visible:ring-contrast-low',
+        secondary:
+          'bg-secondary-lighter text-secondary-foreground hover:bg-secondary hover:shadow-button-secondary focus-visible:ring-secondary-light',
+        ghost: 'hover:bg-background-dark hover:text-accent-foreground focus-visible:ring-contrast-low',
+        link: 'text-secondary underline-offset-4 hover:underline focus-visible:ring-secondary-light dark:text-secondary-lighter',
       },
       size: {
         default: 'h-10 px-4 py-2',
