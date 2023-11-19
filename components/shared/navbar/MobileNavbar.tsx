@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { MenuIcon } from 'lucide-react';
 
-import { LoginLink, MobileNavbarContent } from '@/components/shared/navbar';
+import { LoginLink } from '@/components/shared/navbar';
+import { SidebarContent } from '@/components/shared/sidebar';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -28,16 +29,18 @@ const MobileNavbar = () => {
             <LoginLink isMobile href={ROUTES_NAME.HOME} />
           </SheetTitle>
         </SheetHeader>
-        <MobileNavbarContent />
+        <SidebarContent className="mt-10" />
         <SheetFooter className="mb-5 mt-auto flex flex-col gap-y-4">
           <SheetClose asChild>
             <Link href={ROUTES_NAME.SIGN_IN}>
-              <Button className="w-full">Sign In</Button>
+              <Button className="w-full" size="lg" variant="secondary">
+                Sign In
+              </Button>
             </Link>
           </SheetClose>
           <SheetClose asChild>
             <Link href={ROUTES_NAME.SIGN_UP}>
-              <Button className="w-full" variant="secondary">
+              <Button className="w-full bg-background-lighter" variant="outline" size="lg">
                 Sign Up
               </Button>
             </Link>

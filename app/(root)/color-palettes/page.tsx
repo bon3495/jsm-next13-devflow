@@ -116,7 +116,7 @@ const COLOR_PALETTES = [
 
 const ColorPalettes = () => {
   return (
-    <div className="flex flex-col gap-y-4">
+    <div className="flex flex-col gap-y-4 bg-white">
       {COLOR_PALETTES.map((item) => (
         <div className="flex flex-col space-y-4" key={item.title}>
           <h3 className="text-left text-base font-bold text-black">{item.title}</h3>
