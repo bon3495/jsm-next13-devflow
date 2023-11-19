@@ -1,10 +1,7 @@
-import React from 'react';
-
-import Navbar from '@/components/shared/Navbar';
+import { Navbar } from '@/components/shared/navbar';
 import { Button } from '@/components/ui/button';
-import { RootLayoutProps } from '@/types/global';
 
-const Home = ({ children }: RootLayoutProps) => {
+const Home = () => {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50">
