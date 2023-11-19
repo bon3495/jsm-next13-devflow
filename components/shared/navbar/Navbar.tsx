@@ -3,6 +3,7 @@ import { SignedIn, UserButton } from '@clerk/nextjs';
 import { ModeToggle } from '@/components/shared/navbar';
 import LoginLink from '@/components/shared/navbar/LoginLink';
 import MobileNavbar from '@/components/shared/navbar/MobileNavbar';
+import { GlobalSearch } from '@/components/shared/search';
 import { ROUTES_NAME } from '@/constants/routes';
 
 const Navbar = () => {
@@ -10,7 +11,7 @@ const Navbar = () => {
     <nav className="flex w-full items-center justify-between gap-5 bg-background-light/80 px-6 py-4 shadow-navbar backdrop-blur-xl sm:px-12">
       <LoginLink href={ROUTES_NAME.HOME} />
 
-      <div>GlobalSearch</div>
+      <GlobalSearch />
 
       <div className="flex items-center justify-between gap-4">
         <ModeToggle />
