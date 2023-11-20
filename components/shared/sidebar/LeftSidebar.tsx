@@ -8,7 +8,7 @@ import { ROUTES_NAME } from '@/constants/routes';
 
 const LeftSidebar = () => {
   return (
-    <SidebarWrapper className="left-0 border-r dark:border-background-lighter max-sm:hidden">
+    <SidebarWrapper className="left-0 justify-between border-r dark:border-background-lighter max-sm:hidden">
       <SidebarContent isAllowExpanded />
 
       <SignedOut>

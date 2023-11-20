@@ -170,4 +170,12 @@
     background: -webkit-linear-gradient(0deg, hsla(342, 92%, 54%, 1) 0%, hsla(342, 92%, 65%, 1) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F61E5F", endColorstr="#F85485", GradientType=1 );
   }
+
+  .bg-secondary-gradient {
+    background: hsla(250, 84%, 60%, 1);
+    background: linear-gradient(0deg, hsla(250, 84%, 60%, 1) 0%, hsla(250, 85%, 67%, 1) 100%);
+    background: -moz-linear-gradient(0deg, hsla(250, 84%, 60%, 1) 0%, hsla(250, 85%, 67%, 1) 100%);
+    background: -webkit-linear-gradient(0deg, hsla(250, 84%, 60%, 1) 0%, hsla(250, 85%, 67%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#6043EF", endColorstr="#7C64F2", GradientType=1 );
+  }
 }

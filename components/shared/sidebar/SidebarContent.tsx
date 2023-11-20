@@ -35,7 +35,7 @@ const SidebarContent = ({
                   buttonVariants({
                     variant: 'ghost',
                     className:
-                      'h-auto w-full justify-start gap-x-2 px-4 py-3 text-lg font-semibold hover:bg-background-darker dark:hover:bg-background-light',
+                      'h-auto w-full justify-start gap-x-2 px-4 py-3 text-base font-semibold hover:bg-background-darker dark:hover:bg-background-light',
                   }),
                   {
                     'bg-primary-gradient text-white hover:text-white': isActive,

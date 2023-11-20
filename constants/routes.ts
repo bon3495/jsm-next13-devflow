@@ -7,5 +7,5 @@ export const ROUTES_NAME = {
   JOBS: '/jobs',
   TAGS: '/tags',
   PROFILE: '/profile',
-  ASK_QUESTION: '/ask-question',
+  QUESTIONS: '/questions',
 };
