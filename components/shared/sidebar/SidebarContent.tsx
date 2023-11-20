@@ -7,17 +7,24 @@ import { TooltipButton } from '@/components/shared/sidebar';
 import { buttonVariants } from '@/components/ui/button';
 import { SIDEBAR_LINKS } from '@/constants/global';
 import { cn } from '@/lib/utils';
+import { SidebarLink } from '@/types/global';
 
 interface SidebarContentProps extends React.HTMLAttributes<HTMLUListElement> {
   isAllowExpanded?: boolean;
+  sidebarLinks?: SidebarLink[];
 }
 
-const SidebarContent = ({ className, isAllowExpanded, ...props }: SidebarContentProps) => {
+const SidebarContent = ({
+  className,
+  isAllowExpanded,
+  sidebarLinks = SIDEBAR_LINKS,
+  ...props
+}: SidebarContentProps) => {
   const pathname = usePathname();
 
   return (
     <ul className={cn('flex flex-col items-start gap-y-4', className)} {...props}>
-      {SIDEBAR_LINKS.map((item) => {
+      {sidebarLinks.map((item) => {
         const isActive = (pathname.includes(item.route) && item.route.length > 1) || item.route === pathname;
         return (
           <li key={item.route} className="w-full">

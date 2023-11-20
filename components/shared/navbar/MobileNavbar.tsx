@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SignedOut } from '@clerk/nextjs';
 import { MenuIcon } from 'lucide-react';
 
 import { LoginLink } from '@/components/shared/navbar';
@@ -30,22 +31,24 @@ const MobileNavbar = () => {
           </SheetTitle>
         </SheetHeader>
         <SidebarContent className="mt-10" />
-        <SheetFooter className="mb-5 mt-auto flex flex-col gap-y-4">
-          <SheetClose asChild>
-            <Link href={ROUTES_NAME.SIGN_IN}>
-              <Button className="w-full" size="lg" variant="secondary">
-                Sign In
-              </Button>
-            </Link>
-          </SheetClose>
-          <SheetClose asChild>
-            <Link href={ROUTES_NAME.SIGN_UP}>
-              <Button className="w-full bg-background-lighter" variant="outline" size="lg">
-                Sign Up
-              </Button>
-            </Link>
-          </SheetClose>
-        </SheetFooter>
+        <SignedOut>
+          <SheetFooter className="mb-5 mt-auto flex flex-col gap-y-4">
+            <SheetClose asChild>
+              <Link href={ROUTES_NAME.SIGN_IN}>
+                <Button className="w-full" size="lg" variant="secondary">
+                  Sign In
+                </Button>
+              </Link>
+            </SheetClose>
+            <SheetClose asChild>
+              <Link href={ROUTES_NAME.SIGN_UP}>
+                <Button className="w-full bg-background-lighter" variant="outline" size="lg">
+                  Sign Up
+                </Button>
+              </Link>
+            </SheetClose>
+          </SheetFooter>
+        </SignedOut>
       </SheetContent>
     </Sheet>
   );
