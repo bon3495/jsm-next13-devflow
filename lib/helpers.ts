@@ -1,1 +1,4 @@
-export const getColor = (color: string, opacity?: number) => `hsl(${color} / ${opacity || 1})`;
+export function getColor(color: string, opacity?: number) {
+
+  return `hsl(${color} / ${Number.isFinite(opacity) ? opacity : 1})`;
+}

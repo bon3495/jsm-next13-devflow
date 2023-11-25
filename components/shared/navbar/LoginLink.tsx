@@ -11,7 +11,7 @@ interface LoginLinkProps extends React.ComponentPropsWithoutRef<typeof Link> {
 
 const LoginLink = ({ href = ROUTES_NAME.HOME, className, isMobile, ...props }: LoginLinkProps) => {
   return (
-    <Link href={href} className={cn('flex items-center gap-2', className)} {...props}>
+    <Link href={href} className={cn('flex origin-left items-center gap-2', className)} {...props}>
       <Logo className="text-primary" />
       <p
         className={cn('flex items-center gap-1 font-spaceGrotesk text-2xl font-bold tracking-tighter', {
