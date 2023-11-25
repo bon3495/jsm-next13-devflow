@@ -10,11 +10,11 @@ const SidebarWrapper = ({ children, className }: SidebarWrapperProps) => {
   return (
     <aside
       className={cn(
-        'sticky top-[80px] flex h-[calc(100vh-80px)] flex-col overflow-y-auto p-6 pt-12 dark:shadow-none lg:w-[240px]',
+        'sticky top-[80px] flex h-[calc(100vh-80px)] w-[105px] flex-col overflow-y-auto transition-all duration-200 dark:shadow-none lg:w-[240px]',
         className,
       )}
     >
-      <ScrollArea>{children}</ScrollArea>
+      <ScrollArea className="flex-1 p-6 pt-12">{children}</ScrollArea>
     </aside>
   );
 };

@@ -3,7 +3,6 @@ import { Inter, Space_Grotesk as SpaceGrotesk } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
 
 import { ThemeProvider } from '@/components/theme-provider';
-import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
 import { RootLayoutProps } from '@/types/global';
 
@@ -35,7 +34,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
-          'min-h-screen bg-background font-inter antialiased',
+          'min-h-screen bg-background font-inter text-foreground antialiased',
           fontInter.variable,
           fontSpaceGrotesk.variable,
         )}
@@ -49,10 +48,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               },
             }}
           >
-            <ScrollArea className="h-screen">
-              {children}
-              <ScrollBar className="relative z-[100]" />
-            </ScrollArea>
+            {children}
           </ClerkProvider>
         </ThemeProvider>
       </body>

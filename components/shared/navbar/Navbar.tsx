@@ -5,10 +5,12 @@ import LoginLink from '@/components/shared/navbar/LoginLink';
 import MobileNavbar from '@/components/shared/navbar/MobileNavbar';
 import { GlobalSearch } from '@/components/shared/search';
 import { ROUTES_NAME } from '@/constants/routes';
+import { COLORS } from '@/constants/styles';
+import { getColor } from '@/lib/helpers';
 
 const Navbar = () => {
   return (
-    <nav className="flex w-full items-center justify-between gap-5 bg-background-light/80 px-6 py-4 shadow-navbar backdrop-blur-xl sm:px-12">
+    <nav className="flex w-full items-center justify-between gap-5 px-6 py-4 sm:px-12">
       <LoginLink href={ROUTES_NAME.HOME} />
 
       <GlobalSearch />
@@ -23,7 +25,7 @@ const Navbar = () => {
                 avatarBox: 'h-10 w-10',
               },
               variables: {
-                colorPrimary: 'hsl(346.8, 77.2%, 49.8%)',
+                colorPrimary: getColor(COLORS.PRIMARY),
               },
             }}
           />

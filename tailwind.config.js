@@ -28,6 +28,9 @@ export const theme = {
       'button-secondary': '0px 10px 50px 0px hsla(250, 84%, 54%, 0.3);',
       'search-global': '0 5px 12px rgba(0, 0, 0, 0.2), inset 0 0 0 0 rgba(255, 255, 255, 0.05)',
     },
+    height: {
+      header: '80px',
+    },
     colors: {
       border: 'hsl(var(--border))',
       input: 'hsl(var(--input))',

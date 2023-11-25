@@ -45,7 +45,7 @@ const SidebarContent = ({
                 <item.Icon />
                 <p
                   className={cn({
-                    'sm:hidden lg:inline-block': isAllowExpanded,
+                    'hidden lg:inline-block': isAllowExpanded,
                   })}
                 >
                   {item.label}
