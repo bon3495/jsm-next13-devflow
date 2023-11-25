@@ -11,7 +11,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
       <main className="relative mt-[80px] flex h-[2000px] flex-col bg-background">
         <div className="flex flex-1">
           <LeftSidebar />
-          <section className="flex min-h-screen flex-1 flex-col px-6 pb-6 pt-36 max-md:pb-14 sm:px-14">
+          <section className="flex min-h-screen flex-1 flex-col px-4 pb-6 pt-10 max-md:pb-10">
             <div className="mx-auto w-full max-w-5xl">{children}</div>
           </section>
           <RightSidebar />
