@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 
 const Home = () => {
   return (
-    <div className="grid grid-cols-6 gap-x-4">
+    <div className="grid h-[2000px] grid-cols-6 gap-x-4">
       <Button>Primary</Button>
       <Button variant="destructive">Destructive</Button>
       <Button variant="outline">Outline</Button>
