@@ -75,7 +75,7 @@ const POPULAR_TAGS = [
 
 const RightSidebar = () => {
   return (
-    <SidebarWrapper className="right-0 border-l max-xl:hidden">
+    <SidebarWrapper className="right-0 border-l dark:border-background-lighter  max-xl:hidden">
       <section>
         <h3 className="mb-4 text-lg font-semibold">Top Questions</h3>
         <ul className="flex flex-col gap-y-3">

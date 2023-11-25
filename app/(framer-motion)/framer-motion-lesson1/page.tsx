@@ -7,7 +7,27 @@ import CheckedIcon from '@/components/icons/CheckedIcon';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Skeleton } from '@/components/ui/skeleton';
+import { COLORS } from '@/constants/styles';
+import { getColor } from '@/lib/helpers';
 import { cn } from '@/lib/utils';
+
+const stepVariants = {
+  inactive: {
+    backgroundColor: getColor(COLORS.DEFAULT.BACKGROUND),
+    borderColor: getColor(COLORS.DEFAULT.CONTRAST_MEDIUM),
+    color: getColor(COLORS.DEFAULT.MUTED_FOREGROUND),
+  },
+  active: {
+    backgroundColor: getColor(COLORS.DEFAULT.BACKGROUND),
+    borderColor: getColor(COLORS.PRIMARY),
+    color: getColor(COLORS.PRIMARY),
+  },
+  complete: {
+    backgroundColor: getColor(COLORS.PRIMARY),
+    borderColor: getColor(COLORS.PRIMARY),
+    color: getColor(COLORS.PRIMARY),
+  },
+};
 
 const Page = () => {
   const [step, setStep] = useState(1);
@@ -86,23 +106,7 @@ const Step = ({ value, currentStep }: { currentStep: number; value: number }) =>
       <motion.p
         initial={false}
         transition={{ duration: 0.2 }}
-        variants={{
-          inactive: {
-            backgroundColor: 'var(--background)',
-            borderColor: 'var(--contrast-medium)',
-            color: 'var(--muted-foreground)',
-          },
-          active: {
-            backgroundColor: 'var(--background)',
-            borderColor: 'var(--primary)',
-            color: 'var(--primary)',
-          },
-          complete: {
-            backgroundColor: 'var(--primary)',
-            borderColor: 'var(--primary)',
-            color: 'var(--primary)',
-          },
-        }}
+        variants={stepVariants}
         className={cn('relative flex h-10 w-10 items-center justify-center rounded-full border-2 text-lg')}
       >
         {status === 'complete' ? <CheckedIcon className="text-white" /> : value}
