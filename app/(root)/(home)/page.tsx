@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import { LocalSearchBar } from '@/components/shared/search';
 import { buttonVariants } from '@/components/ui/button';
 import { ROUTES_NAME } from '@/constants/routes';
+import HomeHeader from '@/containers/home/HomeHeader';
 
 const Home = () => {
   return (
@@ -13,12 +13,7 @@ const Home = () => {
           Ask a Question
         </Link>
       </div>
-      <section className="mt-10 flex justify-between gap-5 max-sm:flex-col sm:items-center">
-        <LocalSearchBar
-        // route={ROUTES_NAME.HOME}
-        />
-        <div>Filter</div>
-      </section>
+      <HomeHeader />
     </>
   );
 };

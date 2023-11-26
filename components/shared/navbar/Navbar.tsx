@@ -10,7 +10,7 @@ import { getColor } from '@/lib/helpers';
 
 const Navbar = () => {
   return (
-    <nav className="flex h-full w-full items-center justify-between gap-5 px-6 py-4 sm:px-12">
+    <nav className="container flex h-full w-full items-center justify-between gap-5 px-6 py-4">
       <LoginLink href={ROUTES_NAME.HOME} />
 
       <GlobalSearch />

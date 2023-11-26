@@ -5,13 +5,13 @@ export const darkMode = ['class'];
 export const content = [
   './pages/**/*.{ts,tsx}',
   './components/**/*.{ts,tsx}',
+  './containers/**/*.{ts,tsx}',
   './app/**/*.{ts,tsx}',
   './src/**/*.{ts,tsx}',
 ];
 export const theme = {
   container: {
     center: true,
-    padding: '2rem',
     screens: {
       '2xl': '1400px',
     },
@@ -50,6 +50,7 @@ export const theme = {
         dark: 'hsl(var(--primary-dark))',
         light: 'hsl(var(--primary-light))',
         lighter: 'hsl(var(--primary-lighter))',
+        lightest: 'hsl(var(--primary-lightest))',
       },
       secondary: {
         DEFAULT: 'hsl(var(--secondary))',

@@ -10,3 +10,8 @@ export interface SidebarLink {
   route: string;
   label: string;
 }
+
+export interface OptionProps {
+  label: string
+  value: string
+}
