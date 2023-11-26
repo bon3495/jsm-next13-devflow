@@ -8,4 +8,5 @@ export const ROUTES_NAME = {
   TAGS: '/tags',
   PROFILE: '/profile',
   QUESTIONS: '/questions',
-};
+  ASK_QUESTION: '/ask-question',
+} as const;

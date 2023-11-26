@@ -36,7 +36,7 @@ export const SIDEBAR_LINKS: SidebarLink[] = [
   },
   {
     Icon: HelpCircle,
-    route: ROUTES_NAME.QUESTIONS,
-    label: 'Ask a question',
+    route: ROUTES_NAME.ASK_QUESTION,
+    label: 'Ask a Question',
   },
 ];
