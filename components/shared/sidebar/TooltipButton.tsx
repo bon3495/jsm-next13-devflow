@@ -1,5 +1,5 @@
 import { ButtonProps } from '@/components/ui/button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipPortal, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface IconButtonProps extends ButtonProps {
   content?: string;
@@ -7,12 +7,14 @@ interface IconButtonProps extends ButtonProps {
 
 const TooltipButton = ({ children, content }: IconButtonProps) => {
   return (
-    <TooltipProvider delayDuration={300} disableHoverableContent>
+    <TooltipProvider delayDuration={300}>
       <Tooltip>
         <TooltipTrigger asChild>{children}</TooltipTrigger>
-        <TooltipContent side="right" align="start">
-          <p>{content}</p>
-        </TooltipContent>
+        <TooltipPortal>
+          <TooltipContent side="right" align="start" className="lg:hidden">
+            <p>{content}</p>
+          </TooltipContent>
+        </TooltipPortal>
       </Tooltip>
     </TooltipProvider>
   );

@@ -20,7 +20,7 @@ function ModeToggle() {
         <Button
           variant="ghost"
           size="icon"
-          className="focus-visible:ring-contrast-low data-[state=open]:bg-background-dark dark:hover:bg-background-lighter data-[state=open]:dark:bg-background-lighter"
+          className="data-[state=open]:bg-background-dark dark:hover:bg-background-lighter data-[state=open]:dark:bg-background-lighter"
         >
           <SunIcon className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />

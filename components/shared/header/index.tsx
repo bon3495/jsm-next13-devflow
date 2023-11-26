@@ -9,7 +9,7 @@ const BOUNDS = 200;
 const Header = () => {
   const { scrollYBoundedProgress } = useBoundedScroll(BOUNDS);
 
-  const height = useTransform(scrollYBoundedProgress, [0, 1], [90, 80]);
+  const height = useTransform(scrollYBoundedProgress, [0, 1], [80, 80]);
 
   return (
     <motion.header

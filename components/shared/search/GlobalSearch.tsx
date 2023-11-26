@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 const GlobalSearch = () => {
   return (
     <div className="relative w-full max-w-[600px] max-lg:hidden">
-      <div className="relative flex rounded-xl">
+      <div className="relative flex rounded-md">
         <Label htmlFor="global-search" className="absolute left-4 top-1/2 -translate-y-1/2">
           <Search />
         </Label>
