@@ -59,6 +59,8 @@ export const theme = {
         dark: 'hsl(var(--secondary-dark))',
         light: 'hsl(var(--secondary-light))',
         lighter: 'hsl(var(--secondary-lighter))',
+        lightest: 'hsl(var(--secondary-lightest))',
+        sub: 'hsl(var(--secondary-sub))',
       },
       destructive: {
         DEFAULT: 'hsl(var(--destructive))',
