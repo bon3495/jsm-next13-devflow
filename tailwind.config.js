@@ -27,6 +27,7 @@ export const theme = {
       'button-primary': '0px 10px 30px 0px hsla(342, 92%, 54%, 0.3);',
       'button-secondary': '0px 10px 30px 0px hsla(250, 84%, 54%, 0.3);',
       'search-global': '0 5px 12px rgba(0, 0, 0, 0.2), inset 0 0 0 0 rgba(255, 255, 255, 0.05)',
+      'card-light': '0 4px 24px 0 rgba(34, 41, 47, 0.1)',
     },
     height: {
       header: '80px',
