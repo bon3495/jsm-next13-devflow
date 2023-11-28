@@ -59,6 +59,8 @@
     --secondary-light: 250 84% 60%;
     --secondary-lighter: 250 84% 67%;
     --secondary-foreground: 250 100% 100%;
+    --secondary-lightest: 245 82% 67%;
+    --secondary-sub: 245 82% 67%;
 
     --foreground: 240 10% 4%;
     --card: 0 0% 100%;

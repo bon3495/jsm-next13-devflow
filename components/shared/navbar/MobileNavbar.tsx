@@ -5,6 +5,7 @@ import { MenuIcon } from 'lucide-react';
 import { LoginLink } from '@/components/shared/navbar';
 import { SidebarContent } from '@/components/shared/sidebar';
 import { Button } from '@/components/ui/button';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   Sheet,
   SheetClose,
@@ -24,25 +25,27 @@ const MobileNavbar = () => {
           <MenuIcon />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="flex flex-col">
+      <SheetContent side="left" className="flex flex-col bg-background dark:bg-background-darker">
         <SheetHeader>
           <SheetTitle>
             <LoginLink isMobile href={ROUTES_NAME.HOME} />
           </SheetTitle>
         </SheetHeader>
-        <SidebarContent className="mt-10" />
+        <ScrollArea className="flex flex-1 flex-col">
+          <SidebarContent className="mt-10" />
+        </ScrollArea>
         <SignedOut>
-          <SheetFooter className="mb-5 mt-auto flex flex-col gap-y-4">
+          <SheetFooter className="mt-auto flex flex-col gap-y-4 pt-6">
             <SheetClose asChild>
               <Link href={ROUTES_NAME.SIGN_IN}>
-                <Button className="w-full" size="lg" variant="secondary">
+                <Button className="w-full" variant="secondary">
                   Sign In
                 </Button>
               </Link>
             </SheetClose>
             <SheetClose asChild>
               <Link href={ROUTES_NAME.SIGN_UP}>
-                <Button className="w-full bg-background-lighter" variant="outline" size="lg">
+                <Button className="w-full" variant="outline">
                   Sign Up
                 </Button>
               </Link>

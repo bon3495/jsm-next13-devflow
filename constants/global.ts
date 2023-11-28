@@ -1,4 +1,4 @@
-import { Briefcase, HelpCircle, Home, Info, Star, Tag, Users } from 'lucide-react';
+import { Briefcase, HelpCircle, Home, Star, Tag, User, Users } from 'lucide-react';
 
 import { ROUTES_NAME } from '@/constants/routes';
 import { SidebarLink } from '@/types/global';
@@ -30,7 +30,7 @@ export const SIDEBAR_LINKS: SidebarLink[] = [
     label: 'Tags',
   },
   {
-    Icon: Info,
+    Icon: User,
     route: ROUTES_NAME.PROFILE,
     label: 'Profile',
   },

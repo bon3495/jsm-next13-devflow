@@ -12,23 +12,25 @@ import { SidebarLink } from '@/types/global';
 interface SidebarContentProps extends React.HTMLAttributes<HTMLUListElement> {
   isAllowExpanded?: boolean;
   sidebarLinks?: SidebarLink[];
+  isShowTooltip?: boolean;
 }
 
 const SidebarContent = ({
   className,
   isAllowExpanded,
   sidebarLinks = SIDEBAR_LINKS,
+  isShowTooltip,
   ...props
 }: SidebarContentProps) => {
   const pathname = usePathname();
 
   return (
-    <ul className={cn('flex flex-col items-start gap-y-4', className)} {...props}>
+    <ul className={cn('flex flex-col items-start gap-y-4 px-6', className)} {...props}>
       {sidebarLinks.map((item) => {
         const isActive = (pathname.includes(item.route) && item.route.length > 1) || item.route === pathname;
         return (
           <li key={item.route} className="w-full">
-            <TooltipButton content={item.label}>
+            <TooltipButton content={item.label} isShowTooltip={isShowTooltip}>
               <Link
                 href={item.route}
                 className={cn(

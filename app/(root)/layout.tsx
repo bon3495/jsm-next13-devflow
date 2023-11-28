@@ -1,4 +1,4 @@
-import Header from '@/components/shared/header';
+import Header from '@/components/shared/Header';
 import { LeftSidebar, RightSidebar } from '@/components/shared/sidebar';
 import { RootLayoutProps } from '@/types/global';
 
@@ -8,9 +8,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
       <Header />
       <div className="container relative flex flex-1">
         <LeftSidebar />
-        <main className="flex min-h-screen flex-1 flex-col px-6 pb-6 pt-[140px] max-md:pb-10">
-          <div className="mx-auto w-full">{children}</div>
-        </main>
+        <main className="flex min-h-screen flex-1 flex-col px-6 pb-12 pt-[130px]">{children}</main>
         <RightSidebar />
       </div>
     </div>

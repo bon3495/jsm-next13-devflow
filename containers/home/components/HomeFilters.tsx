@@ -18,7 +18,7 @@ const HomeFilters = () => {
           <Button
             key={option.value}
             className={cn('h-8 rounded-full border text-sm', {
-              'bg-primary-lightest/50 dark:bg-primary-gradient border-transparent text-primary-light dark:text-accent-foreground':
+              'dark:bg-primary-gradient border-transparent bg-primary-lightest/50 text-primary-light dark:text-accent-foreground':
                 isActive,
               'hover:bg-background-dark dark:hover:bg-background-light': !isActive,
             })}
