@@ -22,7 +22,7 @@ const InputSearch = ({
   const isIconRight = iconPosition === 'right';
 
   return (
-    <div className={cn('relative flex min-h-[48px] flex-1 items-center', containerClassName)}>
+    <div className={cn('relative flex min-h-[40px] flex-1 items-center', containerClassName)}>
       <Icon
         className={cn('absolute', {
           'left-4': isIconLeft,
@@ -33,7 +33,7 @@ const InputSearch = ({
       <Input
         {...props}
         className={cn(
-          'h-12 border bg-background-light outline-none transition-all focus:shadow-navbar focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 dark:border-border',
+          'h-10 border bg-background-light outline-none transition-all focus:shadow-navbar focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 dark:border-border',
           className,
           {
             'pl-14': isIconLeft,
