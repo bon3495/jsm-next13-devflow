@@ -18,7 +18,7 @@ const TagLink = ({ children, content, isShowTooltip, href }: TagLinkProps & type
       <Tooltip>
         <TooltipTrigger asChild>
           <Link href={href} className={cn(badgeVariants({ variant: 'tag-secondary', className: 'w-fit' }))}>
-            <span className="mb-[1px] inline-block">{children}</span>
+            <span className="inline-block">{children}</span>
           </Link>
         </TooltipTrigger>
         {isShowTooltip && (
