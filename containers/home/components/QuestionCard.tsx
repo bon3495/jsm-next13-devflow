@@ -59,29 +59,38 @@ const QuestionCard = ({ question }: QuestionCardProps) => {
       </div>
       <Separator className="my-4" />
 
-      <div className="flex items-center pb-1">
+      <div className="flex items-center">
         <div className="flex items-center text-foreground">
           <TextWithTooltip
             content={`${formatNumberWithDot(question.upvotes)} votes`}
-            Icon={<LikeIcon className="h-5 w-5" />}
+            Icon={<LikeIcon className="sm:h-5 sm:w-5" />}
           >
-            <p className="ml-1 text-sm">{formatNumberWithExtension(question.upvotes)} votes</p>
+            <p className="ml-1 flex items-center space-x-1 text-sm">
+              <span>{formatNumberWithExtension(question.upvotes)}</span>
+              <span className="hidden sm:inline-block">votes</span>
+            </p>
           </TextWithTooltip>
         </div>
         <div className="ml-auto mr-2 flex items-center">
           <TextWithTooltip
             content={`${formatNumberWithDot(question.views)} views`}
-            Icon={<EyeIcon className="h-5 w-5" />}
+            Icon={<EyeIcon className="sm:h-5 sm:w-5" />}
           >
-            <p className="ml-1 text-sm">{formatNumberWithExtension(question.views)} views</p>
+            <p className="ml-1 flex items-center space-x-1 text-sm">
+              <span>{formatNumberWithExtension(question.views)}</span>
+              <span className="hidden sm:inline-block">views</span>
+            </p>
           </TextWithTooltip>
         </div>
         <div className="flex items-center">
           <TextWithTooltip
             content={`${formatNumberWithDot(question.answers)} answers`}
-            Icon={<ChatIcon className="h-5 w-5" />}
+            Icon={<ChatIcon className="sm:h-5 sm:w-5" />}
           >
-            <p className="ml-1 text-sm">{formatNumberWithExtension(question.answers)} answers</p>
+            <p className="ml-1 flex items-center space-x-1 text-sm">
+              <span>{formatNumberWithExtension(question.answers)}</span>
+              <span className="hidden sm:inline-block">answers</span>
+            </p>
           </TextWithTooltip>
         </div>
       </div>

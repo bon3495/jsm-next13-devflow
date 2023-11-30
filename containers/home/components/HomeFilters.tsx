@@ -11,7 +11,7 @@ const HomeFilters = () => {
   const [filters, setFilters] = useState<string[]>([]);
 
   return (
-    <div className="mt-6 flex items-center gap-x-4 max-lg:hidden">
+    <div className="mt-6 flex items-center gap-x-2 max-lg:hidden">
       {HOME_PAGE_FILTERS.map((option) => {
         const isActive = filters.includes(option.value);
         return (

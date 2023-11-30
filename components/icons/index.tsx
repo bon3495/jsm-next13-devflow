@@ -1,5 +1,6 @@
 import ChatIcon from '@/components/icons/ChatIcon';
 import CheckedIcon from '@/components/icons/CheckedIcon';
+import CloseIcon from '@/components/icons/CloseIcon';
 import EyeIcon from '@/components/icons/EyeIcon';
 import LikeIcon from '@/components/icons/LikeIcon';
 import Logo from '@/components/icons/Logo';
@@ -14,4 +15,5 @@ export const Icons = {
   Logo,
   EyeIcon,
   LikeIcon,
+  CloseIcon,
 };

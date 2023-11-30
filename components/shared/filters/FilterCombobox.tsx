@@ -27,7 +27,7 @@ function FilterCombobox({ filters, hasSearch, triggerClassName }: FilterCombobox
           role="combobox"
           aria-expanded={open}
           className={cn(
-            'hidden h-12 justify-between font-normal data-[state=open]:bg-background-dark dark:border-border data-[state=open]:dark:bg-background-lighter max-lg:flex max-lg:w-12',
+            'hidden h-10 justify-center p-1 font-normal data-[state=open]:bg-background-dark dark:border-border data-[state=open]:dark:bg-background-lighter max-lg:flex max-lg:w-10',
             triggerClassName,
           )}
         >
