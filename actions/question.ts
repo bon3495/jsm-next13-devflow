@@ -1,5 +1,7 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
+
 import { CreateQuestionSchema } from '@/containers/home/schema';
 import {
   CreateQuestionType,
@@ -27,7 +29,8 @@ export async function getQuestions(params: GetQuestionsParamsType): Promise<Ques
       .populate({
         path: 'author',
         model: UserModel,
-      })) as QuestionItemType[];
+      })
+      .sort({ createAt: -1 })) as QuestionItemType[];
 
     return { data: questions };
   } catch (error) {
@@ -40,7 +43,7 @@ export async function getQuestions(params: GetQuestionsParamsType): Promise<Ques
 export async function createQuestion(params: CreateQuestionType) {
   try {
     connectToDatabase();
-    const { title, details, tags, author } = CreateQuestionSchema.parse(params);
+    const { title, details, tags, author, path } = CreateQuestionSchema.parse(params);
 
     // Create the question
     const question = await QuestionModel.create({
@@ -81,5 +84,6 @@ export async function createQuestion(params: CreateQuestionType) {
     // Create an interaction record for the user's ask question action
 
     // Increment author's reputation by +5 for creating a question
+    revalidatePath(path);
   } catch (error) {}
 }

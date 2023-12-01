@@ -20,7 +20,7 @@ interface QuestionCardProps {
 
 const QuestionCard = ({ question }: QuestionCardProps) => {
   return (
-    <li className="flex flex-1 flex-col rounded-md p-4 shadow-card-light dark:bg-background-light dark:shadow-card">
+    <li className="flex flex-col rounded-md p-4 shadow-card-light dark:bg-background-light dark:shadow-card">
       <Link href={`${ROUTES_NAME.QUESTIONS}/${question._id.toString()}`} className="">
         <h3 className="mb-4 line-clamp-2 text-lg font-semibold transition-all hover:text-primary-lighter">
           {question.title}
@@ -50,13 +50,15 @@ const QuestionCard = ({ question }: QuestionCardProps) => {
         </TextWithTooltip>
       </div>
 
-      <div className="mt-4 flex gap-2">
-        {question.tags.map((tag) => (
-          <TagLink key={tag._id.toString()} href={`${ROUTES_NAME.TAGS}/${tag._id.toString()}`}>
-            {tag.name}
-          </TagLink>
-        ))}
-      </div>
+      {question.tags.length > 0 ? (
+        <div className="mt-4 flex gap-2">
+          {question.tags.map((tag) => (
+            <TagLink key={tag._id.toString()} href={`${ROUTES_NAME.TAGS}/${tag._id.toString()}`}>
+              {tag.name}
+            </TagLink>
+          ))}
+        </div>
+      ) : null}
       <Separator className="my-4" />
 
       <div className="mt-auto flex items-center">

@@ -18,6 +18,7 @@ const HomeSearchBar = () => {
       value={value}
       onChange={(e) => setValue(e.target.value)}
       placeholder="Search for questions"
+      className="hover:border-border focus:border-border focus-visible:border-border"
     />
   );
 };
