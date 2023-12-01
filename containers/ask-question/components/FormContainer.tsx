@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Editor } from '@tinymce/tinymce-react';
 import { ControllerRenderProps, useForm } from 'react-hook-form';
@@ -35,7 +35,7 @@ interface FormContainerProps {
 
 const FormContainer = ({ mongoUserId }: FormContainerProps) => {
   const router = useRouter();
-  // const pathname = usePathname();
+  const pathname = usePathname();
 
   const editorRef = useRef<Editor | null>(null);
 
@@ -92,7 +92,7 @@ const FormContainer = ({ mongoUserId }: FormContainerProps) => {
       await createQuestion({
         ...data,
         author: mongoUserId,
-        path: '',
+        path: pathname,
       });
 
       router.push(ROUTES_NAME.HOME);

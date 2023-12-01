@@ -1,12 +1,11 @@
 'use server';
 
-import { z } from 'zod';
-
-import { UserInfoSchema, UserServerSchema } from '@/actions/schema/user-server';
+import { UserServerSchema } from '@/containers/authentication/schema';
+import { UserInfoType, UserServerType } from '@/containers/authentication/types';
 import UserModel from '@/database/user.model';
 import { connectToDatabase } from '@/lib/mongoose';
 
-export async function getUserById(params: z.infer<typeof UserServerSchema>): Promise<z.infer<typeof UserInfoSchema>> {
+export async function getUserById(params: UserServerType): Promise<UserInfoType> {
   try {
     connectToDatabase();
 
@@ -16,7 +15,8 @@ export async function getUserById(params: z.infer<typeof UserServerSchema>): Pro
 
     return existingUser;
   } catch (error) {
-    console.log(error);
+    // eslint-disable-next-line no-console
+    console.log('actions - user', error);
     throw error;
   }
 }

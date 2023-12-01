@@ -1,6 +1,13 @@
 import { z } from 'zod';
 
-import { CardQuestionSchema, CardQuestionsListSchema } from '@/containers/home/schema';
+import {
+  CreateQuestionSchema,
+  GetQuestionsParamsSchema,
+  QuestionItemSchema,
+  QuestionsResponseSchema,
+} from '@/containers/home/schema';
 
-export type CardQuestionType = z.infer<typeof CardQuestionSchema>;
-export type CardQuestionsListType = z.infer<typeof CardQuestionsListSchema>;
+export type CreateQuestionType = z.infer<typeof CreateQuestionSchema>;
+export type GetQuestionsParamsType = z.infer<typeof GetQuestionsParamsSchema>;
+export type QuestionItemType = z.infer<typeof QuestionItemSchema>;
+export type QuestionsResponseType = z.infer<typeof QuestionsResponseSchema>;
