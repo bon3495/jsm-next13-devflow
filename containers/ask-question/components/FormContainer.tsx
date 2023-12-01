@@ -1,10 +1,12 @@
 'use client';
 
 import { useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Editor } from '@tinymce/tinymce-react';
 import { ControllerRenderProps, useForm } from 'react-hook-form';
 
+import { createQuestion } from '@/actions/question';
 import CloseIcon from '@/components/icons/CloseIcon';
 import { badgeVariants } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -18,6 +20,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { ROUTES_NAME } from '@/constants/routes';
 import { FormAskQuestionSchema } from '@/containers/ask-question/schema';
 import { FormAskQuestionType } from '@/containers/ask-question/types';
 import { cn } from '@/lib/utils';
@@ -26,7 +29,14 @@ const MAX_LENGTH_TAG_VALUE = 15;
 
 const KEYS = ['Enter', 'Tab'];
 
-const FormContainer = () => {
+interface FormContainerProps {
+  mongoUserId: string;
+}
+
+const FormContainer = ({ mongoUserId }: FormContainerProps) => {
+  const router = useRouter();
+  // const pathname = usePathname();
+
   const editorRef = useRef<Editor | null>(null);
 
   const methods = useForm<FormAskQuestionType>({
@@ -77,8 +87,16 @@ const FormContainer = () => {
     field.onChange(tags.filter((tag) => tag !== value));
   };
 
-  const onSubmit = (data: FormAskQuestionType) => {
-    console.log(data);
+  const onSubmit = async (data: FormAskQuestionType) => {
+    try {
+      await createQuestion({
+        ...data,
+        author: mongoUserId,
+        path: '',
+      });
+
+      router.push(ROUTES_NAME.HOME);
+    } catch (error) {}
   };
 
   return (
