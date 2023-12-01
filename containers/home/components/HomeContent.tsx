@@ -1,8 +1,8 @@
 import { HomeNotFound, QuestionCard, QuestionsList } from '@/containers/home/components';
-import { CardQuestionType } from '@/containers/home/types';
+import { QuestionItemType } from '@/containers/home/types';
 
 interface HomeContentProps {
-  questions: CardQuestionType[];
+  questions: QuestionItemType[];
 }
 
 const HomeContent = ({ questions }: HomeContentProps) => {
@@ -11,7 +11,7 @@ const HomeContent = ({ questions }: HomeContentProps) => {
   return (
     <QuestionsList>
       {questions.map((question) => {
-        return <QuestionCard key={question._id} question={question} />;
+        return <QuestionCard key={question._id.toString()} question={question} />;
       })}
     </QuestionsList>
   );

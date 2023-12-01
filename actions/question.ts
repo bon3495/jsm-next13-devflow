@@ -1,16 +1,46 @@
 'use server';
 
-import { z } from 'zod';
-
-import { QuestionServerSchema } from '@/actions/schema/question-server';
+import { CreateQuestionSchema } from '@/containers/home/schema';
+import {
+  CreateQuestionType,
+  GetQuestionsParamsType,
+  QuestionItemType,
+  QuestionsResponseType,
+} from '@/containers/home/types';
 import QuestionModel from '@/database/question.model';
 import TagModel from '@/database/tag.model';
+import UserModel from '@/database/user.model';
 import { connectToDatabase } from '@/lib/mongoose';
 
-export async function createQuestion(params: z.infer<typeof QuestionServerSchema>) {
+export async function getQuestions(params: GetQuestionsParamsType): Promise<QuestionsResponseType> {
   try {
     connectToDatabase();
-    const { title, details, tags, author } = QuestionServerSchema.parse(params);
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { currentPage, pageSize, searchQuery, filters } = params;
+
+    const questions = (await QuestionModel.find({})
+      .populate({
+        path: 'tags',
+        model: TagModel,
+      })
+      .populate({
+        path: 'author',
+        model: UserModel,
+      })) as QuestionItemType[];
+
+    return { data: questions };
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(error);
+    throw error;
+  }
+}
+
+export async function createQuestion(params: CreateQuestionType) {
+  try {
+    connectToDatabase();
+    const { title, details, tags, author } = CreateQuestionSchema.parse(params);
 
     // Create the question
     const question = await QuestionModel.create({

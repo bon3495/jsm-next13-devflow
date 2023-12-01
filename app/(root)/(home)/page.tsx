@@ -1,11 +1,13 @@
+import { getQuestions } from '@/actions/question';
 import { HomeContent, HomeHeader } from '@/containers/home/components';
-import { DUMMY_QUESTIONS } from '@/mocks/questions';
 
-const Home = () => {
+const Home = async () => {
+  const questionsList = await getQuestions({});
+
   return (
     <>
       <HomeHeader />
-      <HomeContent questions={DUMMY_QUESTIONS} />
+      <HomeContent questions={questionsList.data} />
     </>
   );
 };
