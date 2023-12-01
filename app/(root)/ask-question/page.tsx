@@ -1,11 +1,22 @@
+import { redirect } from 'next/navigation';
+import { auth } from '@clerk/nextjs';
+
+import { getUserById } from '@/actions/user';
+import { ROUTES_NAME } from '@/constants/routes';
 import { FormContainer, InstructionsNotice } from '@/containers/ask-question/components';
 
-const AskQuestionPage = () => {
+const AskQuestionPage = async () => {
+  const { userId } = auth();
+
+  if (!userId) redirect(ROUTES_NAME.SIGN_IN);
+
+  const user = await getUserById({ userId: 'E456' });
+
   return (
     <div className="flex flex-col">
       <h1 className="mb-8 text-3xl font-bold">Ask a public question</h1>
       <InstructionsNotice />
-      <FormContainer />
+      <FormContainer mongoUserId={user._id.toString()} />
     </div>
   );
 };
