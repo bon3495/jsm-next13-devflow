@@ -1,7 +1,6 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import mongoose from 'mongoose';
 
 import { UserInfoType, UserServerType } from '@/containers/authentication/types';
 import QuestionModel from '@/database/question.model';
@@ -16,7 +15,10 @@ export async function getUserById(params: UserServerType): Promise<UserInfoType>
 
     const existingUser = await UserModel.findOne({ clerkId: userId });
 
-    return existingUser;
+    if (existingUser) {
+      return existingUser;
+    }
+    throw new Error('User not found!');
   } catch (error) {
     // eslint-disable-next-line no-console
     console.log('actions - getUserById', error);
@@ -28,7 +30,7 @@ export async function createUser(params: Partial<UserInfoType>): Promise<UserInf
   try {
     connectToDatabase();
 
-    const newUser = (await UserModel.create(params)) as UserInfoType;
+    const newUser = await UserModel.create(params);
 
     return newUser;
   } catch (error) {
@@ -38,7 +40,7 @@ export async function createUser(params: Partial<UserInfoType>): Promise<UserInf
   }
 }
 
-export async function updateUser(clerkId: string, params: Partial<UserInfoType>, path: string) {
+export async function updateUser(clerkId: string, params: Partial<UserInfoType>, path: string): Promise<void> {
   try {
     connectToDatabase();
 
@@ -58,7 +60,7 @@ export async function deleteUser(clerkId: string): Promise<void> {
   try {
     connectToDatabase();
 
-    const user = (await UserModel.findOne({ clerkId })) as UserInfoType;
+    const user = await UserModel.findOne({ clerkId });
     if (!user) {
       throw new Error('User not found!');
     }
@@ -66,8 +68,8 @@ export async function deleteUser(clerkId: string): Promise<void> {
     // Delete user from database, and questions, comments, answers, ...
     // const userQuestionIds = await QuestionModel.find({ author: user._id });
 
-    await QuestionModel.deleteMany({ author: new mongoose.Types.ObjectId(user._id) });
-    await UserModel.findByIdAndDelete(new mongoose.Types.ObjectId(user._id));
+    await QuestionModel.deleteMany({ author: `${user._id}` });
+    await UserModel.findByIdAndDelete(`${user._id}`);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.log('actions - deleteUser', error);
