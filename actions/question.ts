@@ -2,7 +2,6 @@
 
 import { revalidatePath } from 'next/cache';
 
-import { CreateQuestionSchema } from '@/containers/home/schema';
 import {
   CreateQuestionType,
   GetQuestionsParamsType,
@@ -43,7 +42,7 @@ export async function getQuestions(params: GetQuestionsParamsType): Promise<Ques
 export async function createQuestion(params: CreateQuestionType) {
   try {
     connectToDatabase();
-    const { title, details, tags, author, path } = CreateQuestionSchema.parse(params);
+    const { title, details, tags, author, path } = params;
 
     // Create the question
     const question = await QuestionModel.create({
