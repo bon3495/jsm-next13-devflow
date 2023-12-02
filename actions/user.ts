@@ -39,12 +39,18 @@ export async function createUser(params: Partial<UserInfoType>): Promise<UserInf
     throw error;
   }
 }
-
-export async function updateUser(clerkId: string, params: Partial<UserInfoType>, path: string): Promise<void> {
+// id: string, dataUpdate: Partial<UserInfoType>, path: string
+export async function updateUser(params: {
+  clerkId: string;
+  updateData: Partial<UserInfoType>;
+  path: string;
+}): Promise<void> {
   try {
     connectToDatabase();
 
-    await UserModel.findByIdAndUpdate({ clerkId }, params, {
+    const { clerkId, updateData, path } = params;
+
+    await UserModel.findOneAndUpdate({ clerkId }, updateData, {
       new: true,
     });
 
@@ -61,6 +67,7 @@ export async function deleteUser(clerkId: string): Promise<void> {
     connectToDatabase();
 
     const user = await UserModel.findOne({ clerkId });
+
     if (!user) {
       throw new Error('User not found!');
     }

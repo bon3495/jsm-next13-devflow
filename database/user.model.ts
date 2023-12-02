@@ -1,6 +1,6 @@
-import { Document, Model, model, models, Schema } from 'mongoose';
+import { Document, model, models, Schema } from 'mongoose';
 
-import { UserInfoType } from '@/containers/authentication/types';
+// import { UserInfoType } from '@/containers/authentication/types';
 
 export interface UserModelType extends Document {
   clerkId: string;
@@ -35,6 +35,6 @@ const UserDatabaseSchema = new Schema({
   joined: { type: Date, default: Date.now },
 });
 
-const UserModel: Model<UserInfoType> = models.User || model<UserInfoType>('User', UserDatabaseSchema);
+const UserModel = models.User || model('User', UserDatabaseSchema);
 
 export default UserModel;
