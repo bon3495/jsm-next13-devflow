@@ -10,13 +10,13 @@ const AskQuestionPage = async () => {
 
   if (!userId) redirect(ROUTES_NAME.SIGN_IN);
 
-  const user = await getUserById({ userId: 'E456' });
+  const user = await getUserById({ userId });
 
   return (
     <div className="flex flex-col">
       <h1 className="mb-8 text-3xl font-bold">Ask a public question</h1>
       <InstructionsNotice />
-      <FormContainer mongoUserId={user._id.toString()} />
+      <FormContainer mongoUserId={`${user._id}`} />
     </div>
   );
 };
