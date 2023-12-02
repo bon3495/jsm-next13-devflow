@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose';
+// import { Schema } from 'mongoose';
 import { z } from 'zod';
 
 import { UserInfoSchema } from '@/containers/authentication/schema';
@@ -19,12 +19,14 @@ export const GetQuestionsParamsSchema = z.object({
 });
 
 export const QuestionItemSchema = z.object({
-  _id: z.custom<Schema.Types.ObjectId>(),
+  // _id: z.custom<Schema.Types.ObjectId>(),
+  _id: z.string().trim(),
   title: z.string().trim().catch(''),
   details: z.string().trim().catch(''),
   tags: z.array(
     z.object({
-      _id: z.custom<Schema.Types.ObjectId>(),
+      // _id: z.custom<Schema.Types.ObjectId>(),
+      _id: z.string().trim(),
       name: z.string().trim(),
       description: z.string().trim().catch(''),
     }),

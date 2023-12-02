@@ -1,6 +1,7 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
+import mongoose from 'mongoose';
 
 import { UserInfoType, UserServerType } from '@/containers/authentication/types';
 import QuestionModel from '@/database/question.model';
@@ -65,8 +66,8 @@ export async function deleteUser(clerkId: string): Promise<void> {
     // Delete user from database, and questions, comments, answers, ...
     // const userQuestionIds = await QuestionModel.find({ author: user._id });
 
-    await QuestionModel.deleteMany({ author: user._id });
-    await UserModel.findByIdAndDelete(user._id);
+    await QuestionModel.deleteMany({ author: new mongoose.Types.ObjectId(user._id) });
+    await UserModel.findByIdAndDelete(new mongoose.Types.ObjectId(user._id));
   } catch (error) {
     // eslint-disable-next-line no-console
     console.log('actions - deleteUser', error);
