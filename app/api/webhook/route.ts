@@ -92,23 +92,22 @@ export async function POST(req: Request) {
       last_name,
       image_url,
       username,
-      gender,
-      birthday,
+      // gender,
+      // birthday,
     } = evt.data;
 
-    const updatedUser = await updateUser(
-      id,
-      {
-        clerkId: id,
+    const updatedUser = await updateUser({
+      clerkId: id,
+      updateData: {
         email: email_address,
         name: `${first_name}${last_name ? ` ${last_name}` : ''}`,
         picture: image_url,
         username: username!,
-        gender,
-        birthday,
+        // gender,
+        // birthday,
       },
-      `${ROUTES_NAME.PROFILE}/${id}`,
-    );
+      path: `${ROUTES_NAME.PROFILE}/${id}`,
+    });
 
     return NextResponse.json({
       message: 'User updated!',
