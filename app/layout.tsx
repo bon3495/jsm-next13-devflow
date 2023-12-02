@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk as SpaceGrotesk } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
 
 import { ThemeProvider } from '@/components/theme-provider';
@@ -8,16 +7,7 @@ import { RootLayoutProps } from '@/types/global';
 
 import '@/styles/global.css';
 
-export const fontInter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-});
-
-export const fontSpaceGrotesk = SpaceGrotesk({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-spaceGrotesk',
-});
+import { fontInter, fontSpaceGrotesk } from '@/lib/fonts';
 
 export const metadata: Metadata = {
   title: 'Dev Overflow',
