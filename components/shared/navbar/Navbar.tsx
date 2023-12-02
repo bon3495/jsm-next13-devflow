@@ -5,8 +5,6 @@ import LoginLink from '@/components/shared/navbar/LoginLink';
 import MobileNavbar from '@/components/shared/navbar/MobileNavbar';
 import { GlobalSearch } from '@/components/shared/search';
 import { ROUTES_NAME } from '@/constants/routes';
-import { COLORS } from '@/constants/styles';
-import { getColor } from '@/lib/helpers';
 
 const Navbar = () => {
   return (
@@ -25,7 +23,7 @@ const Navbar = () => {
                 avatarBox: 'h-10 w-10',
               },
               variables: {
-                colorPrimary: getColor(COLORS.PRIMARY),
+                colorPrimary: 'transparent',
               },
             }}
           />
