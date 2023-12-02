@@ -20,7 +20,7 @@ interface QuestionCardProps {
 
 const QuestionCard = ({ question }: QuestionCardProps) => {
   return (
-    <li className="flex flex-col rounded-md p-4 shadow-card-light dark:bg-background-light dark:shadow-card">
+    <li className="flex flex-col rounded-md p-6 shadow-card-light dark:bg-background-light dark:shadow-card">
       <Link href={`${ROUTES_NAME.QUESTIONS}/${question._id.toString()}`} className="">
         <h3 className="mb-4 line-clamp-2 text-lg font-semibold transition-all hover:text-primary-lighter">
           {question.title}
@@ -29,7 +29,7 @@ const QuestionCard = ({ question }: QuestionCardProps) => {
 
       <div className="flex items-center">
         <Link href={`${ROUTES_NAME.PROFILE}/${question.author._id}`} className="flex items-center">
-          <Avatar className="mr-2">
+          <Avatar className="mr-2 shadow-avatar">
             <AvatarImage src={question.author.picture} />
             <AvatarFallback>{getAvatarFallback(question.author.name)}</AvatarFallback>
           </Avatar>

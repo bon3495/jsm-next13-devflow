@@ -1,9 +1,16 @@
+import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { auth } from '@clerk/nextjs';
 
 import { getUserById } from '@/actions/user';
+import { baseMetadata, staticMetadata } from '@/config/meta';
 import { ROUTES_NAME } from '@/constants/routes';
 import { FormContainer, InstructionsNotice } from '@/containers/ask-question/components';
+
+export const metadata: Metadata = {
+  ...baseMetadata,
+  ...staticMetadata.askQuestion,
+};
 
 const AskQuestionPage = async () => {
   const { userId } = auth();
