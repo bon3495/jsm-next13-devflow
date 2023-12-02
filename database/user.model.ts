@@ -9,6 +9,7 @@ export interface UserModelType extends Document {
   bio?: string;
   picture: string;
   location?: string;
+  birthday?: string;
   portfolioWebsite?: string;
   reputation?: number;
   saved: Schema.Types.ObjectId[];
@@ -20,10 +21,12 @@ const UserDatabaseSchema = new Schema({
   name: { type: String, required: true },
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
+  password: { type: String },
   bio: { type: String },
-  picture: { type: String, required: true },
+  picture: { type: String },
   location: { type: String },
+  birthday: { type: String },
+  gender: { type: String },
   portfolioWebsite: { type: String },
   reputation: { type: Number, default: 0 },
   saved: [{ type: Schema.Types.ObjectId, ref: 'Question' }],

@@ -18,5 +18,7 @@ export const UserInfoSchema = z.object({
   portfolioWebsite: z.string().trim(),
   reputation: z.number(),
   saved: z.array(z.custom<Schema.Types.ObjectId>()),
-  joined: z.string(),
+  joined: z.string().trim(),
+  gender: z.string().trim(),
+  birthday: z.string().trim(),
 });
