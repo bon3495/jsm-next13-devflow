@@ -19,7 +19,7 @@ export const theme = {
   extend: {
     fontFamily: {
       inter: ['var(--font-inter)', ...fontFamily.sans],
-      spaceGrotesk: ['var(--font-spaceGrotesk)', ...fontFamily.sans],
+      spaceGrotesk: ['var(--font-signikaNegative)', ...fontFamily.sans],
     },
     boxShadow: {
       navbar:

@@ -1,12 +1,12 @@
-import { Inter, Space_Grotesk as SpaceGrotesk } from 'next/font/google';
+import { Inter, Signika_Negative as SignikaNegative } from 'next/font/google';
 
 export const fontInter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 });
 
-export const fontSpaceGrotesk = SpaceGrotesk({
+export const fontSignikaNegative = SignikaNegative({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-spaceGrotesk',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-signikaNegative',
 });

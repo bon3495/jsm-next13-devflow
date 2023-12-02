@@ -20,7 +20,8 @@ const Navbar = () => {
             afterSignOutUrl={ROUTES_NAME.HOME}
             appearance={{
               elements: {
-                avatarBox: 'h-10 w-10',
+                avatarBox: 'h-8 w-8',
+                userButtonTrigger: 'shadow-card-light',
               },
               variables: {
                 colorPrimary: 'transparent',
