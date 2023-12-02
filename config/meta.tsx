@@ -28,4 +28,9 @@ export const staticMetadata = {
     description:
       'Discover a wealth of programming knowledge on Bonrizon. Explore questions and answers on web development, mobile app development, algorithms, data structures, and more. Use powerful filters, efficient pagination, and a robust search to find solutions to your coding challenges. Engage with top-rated questions and contribute to the dynamic programming community at Bonrizon.',
   } satisfies Metadata,
+  askQuestion: {
+    title: 'Ask a Question | Bonrizon',
+    description:
+      'Pose your programming questions on Bonrizon, a community-driven platform. Seek assistance, share your knowledge, and collaborate with developers worldwide. Explore topics in web development, mobile app development, algorithms, data structures, and more.',
+  } satisfies Metadata,
 };

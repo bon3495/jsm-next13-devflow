@@ -21,7 +21,7 @@ const Navbar = () => {
             appearance={{
               elements: {
                 avatarBox: 'h-8 w-8',
-                userButtonTrigger: 'shadow-card-light',
+                userButtonTrigger: 'shadow-avatar',
               },
               variables: {
                 colorPrimary: 'transparent',

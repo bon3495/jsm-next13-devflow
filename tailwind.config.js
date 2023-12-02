@@ -31,6 +31,7 @@ export const theme = {
       'focus-active': '0px 0px 0px 4px hsla(250, 84%, 67%, 0.2)',
       'focus-success': '0px 0px 0px 4px hsla(170, 78%, 36%, 0.20)',
       'focus-error': '0px 0px 0px 4px hsla(342, 92%, 65%, 0.20)',
+      avatar: '0 4px 10px rgba(39,83,123,0.12)',
     },
     height: {
       header: '80px',
