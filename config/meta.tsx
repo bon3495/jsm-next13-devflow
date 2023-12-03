@@ -9,7 +9,6 @@ export const baseMetadata: Metadata = {
     shortcut: '/assets/images/favicon-16x16.png',
     apple: '/assets/images/apple-touch-icon.png',
   },
-  manifest: '/assets/site.webmanifest',
 };
 
 export const staticMetadata = {
@@ -32,5 +31,10 @@ export const staticMetadata = {
     title: 'Ask a Question | Bonrizon',
     description:
       'Pose your programming questions on Bonrizon, a community-driven platform. Seek assistance, share your knowledge, and collaborate with developers worldwide. Explore topics in web development, mobile app development, algorithms, data structures, and more.',
+  } satisfies Metadata,
+  community: {
+    title: 'Community | Bonrizon',
+    description:
+      "Join the Bonrizon community, a collaborative hub for programmers worldwide. Get involved in asking and answering programming questions, share your expertise, and collaborate with developers passionate about web development, mobile app development, algorithms, data structures, and more. Together, let's build a thriving knowledge-sharing community at Bonrizon.",
   } satisfies Metadata,
 };
