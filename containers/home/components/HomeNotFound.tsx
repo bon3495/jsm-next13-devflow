@@ -10,9 +10,14 @@ const HomeNotFound = () => {
       <Image
         src="/assets/illustrations/404.svg"
         alt="No result illustration"
-        width={350}
-        height={300}
+        width={0}
+        height={0}
         className="object-cover"
+        sizes="100vw"
+        style={{
+          width: '350px',
+          height: 'auto',
+        }}
       />
 
       <div className="flex max-w-md flex-col items-center">
