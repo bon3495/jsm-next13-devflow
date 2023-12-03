@@ -92,8 +92,8 @@ export async function POST(req: Request) {
       last_name,
       image_url,
       username,
-      // gender,
-      // birthday,
+      gender,
+      birthday,
     } = evt.data;
 
     const updatedUser = await updateUser({
@@ -103,8 +103,8 @@ export async function POST(req: Request) {
         name: `${first_name}${last_name ? ` ${last_name}` : ''}`,
         picture: image_url,
         username: username!,
-        // gender,
-        // birthday,
+        gender,
+        birthday,
       },
       path: `${ROUTES_NAME.PROFILE}/${id}`,
     });
